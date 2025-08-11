@@ -19,9 +19,9 @@ const projects = [
 	},
 	{
 		title: 'Task-Manager',
-		description: 'A website that can help you keep track of tasks.',
+		description: 'A website that can help you keep track of tasks (like my very first project lmao)',
 		tech: 'HTML',
-		image: '/code.jpg',
+		image: '/Task.png',
 		link: 'https://github.com/Kidus-Bezuayeho/Task-Manager',
 	},
 	{
@@ -29,7 +29,7 @@ const projects = [
 		description:
 			'School Attendance system that creates unique QR codes and emails them to students. Uses Raspberry Pi to scan QR codes and create a spreadsheet of everyone who came to class.',
 		tech: 'Python',
-		image: '/code.jpg',
+		image: '/School.png',
 		link: 'https://github.com/Kidus-Bezuayeho/SchoolAttendanceSystem',
 	},
 ];
