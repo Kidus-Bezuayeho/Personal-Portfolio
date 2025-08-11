@@ -1,4 +1,43 @@
+# Ignore files with spaces and numbers after config names (accidental/backup files)
+* 2.*
+* copy.*
+* backup.*
+*~ 
+*.bak
+*.tmp
 
+# Ignore all .env files except .env.example
+.env*
+!.env.example
+
+# Ignore IDE/editor/project files
+.vscode/
+.idea/
+.history/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignore OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Ignore dependency and build directories
+node_modules/
+bower_components/
+jspm_packages/
+.next/
+out/
+dist/
+dist-ssr/
+build/
+build/Release
+
+# Ignore logs and debug files
 logs
 *.log
 npm-debug.log*
@@ -7,18 +46,22 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Ignore runtime and coverage files
+pids
+*.pid
+*.seed
+*.pid.lock
+lib-cov
+coverage
+*.lcov
+.nyc_output
+.grunt
 
+# Ignore npm/yarn/other cache and lock files
+.npm
+.yarn-integrity
+*.tgz
 
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Ignore eslint and repl history
+.eslintcache
+.node_repl_history
