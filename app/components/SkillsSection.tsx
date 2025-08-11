@@ -1,19 +1,19 @@
 export default function SkillsSection() {
 	const skills = [
-  'JavaScript',
-  'Python',
-  'React.js',
-  'Node.js',
-  'Express.js',
-  'HTML',
-  'CSS',
-  'MongoDB',
-  'MySQL',
-  'PHP',
-  'RESTful APIs',
-  'Azure',
-  'Git'
-];
+		'JavaScript',
+		'Python',
+		'React.js',
+		'Node.js',
+		'Express.js',
+		'HTML',
+		'CSS',
+		'MongoDB',
+		'MySQL',
+		'PHP',
+		'RESTful APIs',
+		'Azure',
+		'Git'
+	];
 
 
 	return (
