@@ -51,13 +51,7 @@ export const metadata: Metadata = {
 		locale: 'en_US',
 		type: 'website',
 	},
-	twitter: {
-		card: 'summary_large_image',
-		title: '[Your Name] - Developer',
-		description: 'Passionate developer creating simple and effective solutions. Explore my projects and development approach.',
-		creator: '@yourusername',
-		images: ['/og-image.jpg'],
-	},
+
 	robots: {
 		index: true,
 		follow: true,
