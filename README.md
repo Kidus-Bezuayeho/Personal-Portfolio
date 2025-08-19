@@ -1,140 +1,48 @@
-# Simple Portfolio Template
+# Kidus Bezuayeho - Personal Portfolio
 
-[Demo](https://www.devportfoliotemplates.com/portfolio-templates/simple)
+Welcome to my personal portfolio! I'm a passionate full-stack software engineer who thrives on creating scalable, user-focused solutions. This portfolio showcases my experience, projects, and coding journey.
 
-## Getting Started
+🌐 **Live Site**: [Your Portfolio URL]
 
-You have two options to get started with this template:
+## About Me
 
-### Option 1: Using Git Sparse Checkout
+This is my personal portfolio built with Next.js (TypeScript) and Tailwind CSS—currently functional but intentionally minimal since I’ve always struggled with UI/UX. Major props to DevPortfolio’s free templates for the design inspiration and basic starting design.
 
-If you want to clone only this specific template:
+I’m a full-stack developer focused on building scalable, accessible web solutions. My expertise spans backend architecture, clean and intuitive UI design (even if it’s wonky at the start), and AI integration, all geared toward solving complex problems efficiently. Most of my coding experience comes from professional and academic projects, but I’ve recently ramped up personal builds to stretch myself creatively and technically. This portfolio is a living project—check back often for updates.
 
-```bash
-git clone --no-checkout https://github.com/devportfoliotemplates/devportfoliotemplates.git
-cd devportfoliotemplates
-git sparse-checkout init --cone
-git sparse-checkout set simple-portfolio-template
-git checkout
-```
+## Tech Stack
 
-### Option 2: Direct Download
+This portfolio is built with:
 
-You can download this template as a ZIP file:
+- **Framework**: Next.js 15.4.6
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+- **Animations**: Framer Motion
 
-1. Visit [download-directory.github.io](https://download-directory.github.io/)
-2. Paste the URL of this portfolio folder: `https://github.com/devportfoliotemplates/devportfoliotemplates/tree/main/simple-portfolio-template`
-3. Download and extract the ZIP file
+## Features
 
-### Running the Template
+- 📱 **Responsive Design**: Optimized for all devices
+- 🎨 **Modern UI**: Clean, professional design with alternating section backgrounds
+- 📊 **Live Widgets**: 
+  - GitHub statistics and language breakdown
+  - LeetCode progress tracking
+  - Spotify playlist integration
+- ⚡ **Performance Optimized**: Next.js Image optimization and lazy loading
+- 🎯 **Accessible**: ARIA labels and semantic HTML
 
-Once you have the template:
+## Professional Experience
 
-1. Install dependencies:
+- **Fullstack Software Engineer Intern** at MLS - Saint Louis City SC (2025)
+- **Software Engineering Intern** at Kai (2024)
+- **Student Web Developer** at Washington University in St. Louis (2024)
 
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-```
+## Skills & Technologies
 
-2. Run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the portfolio.
-
-## Customization
-
-### Personal Information
-
-1. Update metadata in `app/layout.tsx`:
-
-   - Site title
-   - Description
-   - Open Graph metadata
-   - Favicon
-
-2. Modify content in `app/page.tsx`:
-
-   - Hero section
-   - About section
-   - Projects
-   - Contact information
-
-3. Replace assets:
-   - Replace images in the `public` directory
-   - Update social media icons
-   - Modify logo if needed
-
-### Styling
-
-1. Colors and Theme:
-
-   - Customize colors in `tailwind.config.js`
-   - Modify theme variables in `app/globals.css`
-
-2. Typography:
-
-   - Update font families in `tailwind.config.js`
-   - Modify text sizes and weights
-
-3. Layout:
-   - Adjust spacing and padding in component files
-   - Modify responsive breakpoints in `tailwind.config.js`
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Build Errors**
-
-   - Ensure all dependencies are installed
-   - Clear `.next` folder and node_modules
-   - Run `npm install` again
-
-2. **Styling Issues**
-
-   - Run `npm run build` to ensure TailwindCSS classes are generated
-   - Check for conflicting styles in `globals.css`
-
-3. **Image Loading**
-   - Verify images are in the correct format (PNG, JPG, WebP)
-   - Check image paths are correct
-   - Ensure images are in the `public` directory
-
-## Deployment
-
-Follow these steps to deploy your portfolio for free using GitHub and Vercel:
-
-1. Create a new GitHub repository
-
-2. Push your portfolio to GitHub
-
-3. Deploy with Vercel:
-   - Go to [Vercel](https://vercel.com)
-   - Sign up or log in with GitHub
-   - Click "New Project"
-   - Import your GitHub repository
-   - Vercel will automatically detect Next.js
-   - Click "Deploy"
-
-Your portfolio will be live in minutes with a free Vercel domain (e.g., `your-repo.vercel.app`). You can later add a custom domain in your Vercel project settings.
-
-## Support
-
-If you find these templates helpful, please consider:
-
-- Starring the repository ⭐
-- Sharing with other developers
-- [Buying me a coffee](https://www.buymeacoffee.com/andreiancu) ☕
-
-For issues and feature requests, please [create an issue](https://github.com/devportfoliotemplates/devportfoliotemplates/issues).
+**Languages**: JavaScript, Python, PHP, HTML, CSS, TypeScript  
+**Frontend**: React.js, Next.js, Tailwind CSS  
+**Backend**: Node.js, Express.js, RESTful APIs  
+**Databases**: MongoDB, MySQL, Google MySQL  
+**Cloud & DevOps**: Microsoft Azure, GitHub Actions  
+**AI/ML**: Google Gemini API, ChromaDB, LangChain, RAG  
+**Tools**: Git, Vite, Axios
