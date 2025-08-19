@@ -8,7 +8,7 @@ export default function AboutSection() {
                     {/* Intro Paragraph */}
                     <div className="text-center mb-8">
                         <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                            Most of my coding work has been through professional and academic projects, but I've recently started building more personal projects on GitHub.
+                            Most of my coding work has been through professional and academic projects, but I&apos;ve recently started building more personal projects on GitHub.
                             Please come back for updates on my progress!
                         </p>
                     </div>
@@ -21,7 +21,7 @@ export default function AboutSection() {
                             <h3 className="text-lg font-semibold text-gray-900 mb-4">GitHub Overview</h3>
                             <Image
                                 src="https://github-readme-stats.vercel.app/api?username=Kidus-Bezuayeho&show_icons=true&rank_icon=github"
-                                alt="Kidus's GitHub Stats"
+                                alt="Kidus&apos;s GitHub Stats"
                                 width={495}
                                 height={195}
                                 loading="lazy"
@@ -34,7 +34,7 @@ export default function AboutSection() {
                             <h3 className="text-lg font-semibold text-gray-900 mb-4">Top Languages</h3>
                             <Image
                                 src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kidus-Bezuayeho&layout=compact"
-                                alt="Kidus's Top Languages"
+                                alt="Kidus&apos;s Top Languages"
                                 width={495}
                                 height={195}
                                 loading="lazy"
@@ -42,12 +42,12 @@ export default function AboutSection() {
                             />
                         </div>
 
-                        {/* LeetCode Stats - Fixed with priority */}
+                        {/* LeetCode Stats */}
                         <div className="bg-white rounded-2xl shadow-lg p-4">
                             <h3 className="text-lg font-semibold text-gray-900 mb-4">LeetCode Progress</h3>
                             <Image
                                 src="https://leetcard.jacoblin.cool/bkiduss?theme=dark&font=Karma&ext=heatmap"
-                                alt="Kidus's LeetCode Stats"
+                                alt="Kidus&apos;s LeetCode Stats"
                                 width={495}
                                 height={300}
                                 priority
@@ -55,9 +55,9 @@ export default function AboutSection() {
                             />
                         </div>
 
-                        {/* Spotify - Using a different working playlist */}
+                        {/* Spotify Playlist */}
                         <div className="bg-white rounded-2xl shadow-lg p-4">
-                            <h3 className="text-lg font-semibold text-gray-900 mb-4">Coding Playlist</h3>
+                            <h3 className="text-lg font-semibold text-gray-900 mb-4">Currently Playing</h3>
                             <iframe
                                 src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd"
                                 width="100%"
