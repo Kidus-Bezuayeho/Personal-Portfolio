@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio! I'm a passionate full-stack software engineer who thrives on creating scalable, user-focused solutions. This portfolio showcases my experience, projects, and coding journey.
 
-🌐 **Live Site**: [Your Portfolio URL]
+🌐 **Live Site**: [www.kidusbezuayeho.com](https://www.kidusbezuayeho.com)
 
 ## About Me
 
