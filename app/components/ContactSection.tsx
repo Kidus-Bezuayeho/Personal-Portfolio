@@ -37,7 +37,7 @@ export default function ContactSection() {
 							Get in Touch
 						</a>
 						<a
-							href="/Kidus_Bezuayeho_resume.pdf"
+							href="/Kidus_Bezuayeho_Resume.pdf"
 							target="_blank"
 							className="px-6 py-2 border border-gray-300 text-gray-700 font-medium rounded hover:bg-gray-50 transition-colors inline-flex items-center justify-center gap-2"
 						>
@@ -50,6 +50,17 @@ export default function ContactSection() {
 								<path fillRule="evenodd" d="M8 11a1 1 0 100 2h4a1 1 0 100-2H8zm0-4a1 1 0 100 2h4a1 1 0 100-2H8z" clipRule="evenodd" />
 							</svg>
 							View Resume
+						</a>
+						<a
+							href="https://calendar.app.google/MpM6hcpsBxJdy6wF9"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="px-6 py-2 bg-green-600 text-white font-medium rounded hover:bg-green-700 transition-colors inline-flex items-center justify-center gap-2"
+						>
+							<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+								<path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zM18 9H2v6a2 2 0 002 2h12a2 2 0 002-2V9z" />
+							</svg>
+							Appointments
 						</a>
 					</div>
 
