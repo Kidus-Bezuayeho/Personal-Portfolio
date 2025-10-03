@@ -1,6 +1,25 @@
 import Image from 'next/image';
 
-const projects = [
+interface Project {
+	title: string;
+	description: string;
+	tech: string;
+	image: string;
+	link: string;
+	buttonText?: string;
+}
+
+interface InProgressProject {
+	title: string;
+	description: string;
+	tech: string;
+	status: string;
+	expectedCompletion: string;
+	image: string;
+	githubLink: string;
+}
+
+const projects: Project[] = [
 	{
 		title: 'State Smog 2 Website',
 		description: 'Modern HTML and CSS website for State Smog 2, a California-licensed vehicle emission test specialist in Los Angeles. Features responsive design, embedded maps, and clear presentation of business services and contact information.',
@@ -42,7 +61,7 @@ const projects = [
 	},
 ];
 
-const inProgressProjects: any[] = [];
+const inProgressProjects: InProgressProject[] = [];
 
 export default function ProjectsSection() {
 	return (
