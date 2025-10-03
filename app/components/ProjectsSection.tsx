@@ -164,7 +164,7 @@ export default function ProjectsSection() {
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
 								</svg>
 								<p className="text-gray-600 text-sm sm:text-base">
-									School got me busy, but I will be coming back to do more!
+									School got me busy right now, but I will be coming back to do more!
 								</p>
 							</div>
 						</div>
