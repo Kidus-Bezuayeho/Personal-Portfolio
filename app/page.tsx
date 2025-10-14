@@ -1,5 +1,6 @@
 'use client';
 
+import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';
@@ -9,7 +10,8 @@ import ContactSection from './components/ContactSection';
 
 export default function SimplePortfolio() {
 	return (
-		<main className="min-h-screen bg-white pt-12">
+		<main className="min-h-screen bg-white">
+			<Header />
 			<HeroSection />
 			<AboutSection />
 			<SkillsSection />

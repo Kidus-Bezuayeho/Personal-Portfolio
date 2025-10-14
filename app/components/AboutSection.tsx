@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AboutSection() {
     return (
-        <section className="bg-gray-50 py-12 sm:py-20">
+        <section id="about" className="bg-gray-50 py-12 sm:py-20">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="space-y-6">
                     {/* Intro Paragraph */}
