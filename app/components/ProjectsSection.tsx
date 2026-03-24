@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { fadeUp, staggerContainer } from '../lib/animations';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 interface Project {
 	title: string;
@@ -31,7 +31,7 @@ const projects: Project[] = [
 		tech: 'HTML, CSS',
 		image: '/Smog.png',
 		link: 'https://statesmogtwo.com/',
-		buttonText: 'View Site',
+		buttonText: 'Live Site',
 	},
 	{
 		title: 'DanteDrop',
@@ -71,147 +71,125 @@ const inProgressProjects: InProgressProject[] = [];
 
 export default function ProjectsSection() {
 	return (
-		<section id="projects" className="bg-background py-12 sm:py-20">
-			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-				<motion.h2
-					variants={fadeUp}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true }}
-					className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 text-center"
+		<section id="projects" className="py-24 sm:py-32 relative">
+			<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, margin: "-100px" }}
+					className="mb-16 md:mb-24"
 				>
-					Stuff I&apos;ve shipped
-				</motion.h2>
+					<h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+						Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">Works</span>
+					</h2>
+					<p className="text-lg text-muted-foreground max-w-2xl">
+						A collection of things I've built, ranging from local business marketing sites to hardware-integrated python scripts.
+					</p>
+				</motion.div>
 
 				{/* Completed Projects */}
-				<div className="mb-12">
-					<motion.h3
-						variants={fadeUp}
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true }}
-						className="text-lg font-semibold text-gray-900 dark:text-white mb-4"
-					>
-						Builds I&apos;m happy to show
-					</motion.h3>
-					<motion.div
-						variants={staggerContainer}
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true }}
-						className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"
-					>
-						{projects.map((project, idx) => (
+				<div className="space-y-20 md:space-y-32">
+					{projects.map((project, idx) => {
+						const isEven = idx % 2 === 0;
+						return (
 							<motion.div
 								key={idx}
-								variants={fadeUp}
-								className="bg-card rounded-lg shadow-md dark:shadow-none border border-border overflow-hidden hover:shadow-lg dark:hover:border-gray-600 transition-all"
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true, margin: "-100px" }}
+								transition={{ duration: 0.7, ease: "easeOut" }}
+								className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-16 items-center`}
 							>
-								<div className="aspect-video bg-gray-100 dark:bg-gray-700 relative">
-									<Image src={project.image} alt={project.title} fill className="object-cover" />
-								</div>
-								<div className="p-4 sm:p-6">
-									<h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">{project.title}</h4>
-									<p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-2">{project.description}</p>
-									<span className="inline-block bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded mb-4">
-										{project.tech}
-									</span>
-									<div className="flex gap-2">
-										<a
-											href={project.link}
-											className="text-primary font-medium text-sm sm:text-base hover:opacity-80"
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											{project.buttonText || 'View Project'} →
-										</a>
+								{/* Image Side */}
+								<div className="w-full md:w-1/2">
+									<div className="relative aspect-video glass-card rounded-2xl overflow-hidden group border border-border/50 hover:border-accent/50 transition-colors duration-500">
+										<div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay" />
+										{project.image ? (
+											<Image
+												src={project.image}
+												alt={project.title}
+												fill
+												className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+											/>
+										) : (
+											<div className="w-full h-full bg-muted flex items-center justify-center">
+												<span className="text-muted-foreground">Image via {project.title}</span>
+											</div>
+										)}
 									</div>
 								</div>
+
+								{/* Content Side */}
+								<div className="w-full md:w-1/2 flex flex-col justify-center">
+									<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20 w-fit mb-6">
+										{project.tech}
+									</div>
+									<h3 className="text-2xl md:text-3xl font-bold mb-4">{project.title}</h3>
+									<p className="text-muted-foreground md:text-lg mb-8 leading-relaxed">
+										{project.description}
+									</p>
+									<a
+										href={project.link}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="inline-flex items-center gap-2 pb-1 border-b-2 border-accent text-foreground hover:text-accent transition-colors font-medium w-fit group"
+									>
+										{project.buttonText || 'View Details'}
+										<svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+									</a>
+								</div>
 							</motion.div>
-						))}
-					</motion.div>
+						);
+					})}
 				</div>
 
 				{/* In Progress Projects */}
-				<div>
-					<motion.h3
-						variants={fadeUp}
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true }}
-						className="text-lg font-semibold text-gray-900 dark:text-white mb-4"
-					>
-						On the back burner
-					</motion.h3>
-					{inProgressProjects.length > 0 ? (
-						<motion.div
-							variants={staggerContainer}
-							initial="hidden"
-							whileInView="visible"
+				{inProgressProjects.length > 0 && (
+					<div className="mt-32">
+						<motion.h3
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
-							className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"
+							className="text-2xl font-bold mb-8"
 						>
+							Currently Brewing
+						</motion.h3>
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 							{inProgressProjects.map((project, idx) => (
 								<motion.div
 									key={idx}
-									variants={fadeUp}
-									className="bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-gray-800 dark:to-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow border border-indigo-100 dark:border-gray-700"
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									transition={{ delay: idx * 0.1 }}
+									className="glass-card p-6 md:p-8 rounded-2xl border border-border relative overflow-hidden group"
 								>
-									<div className="aspect-video bg-gray-100 dark:bg-gray-700 relative">
-										<Image src={project.image} alt={project.title} fill className="object-cover" />
-										<div className="absolute top-2 right-2">
-											<span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-200 backdrop-blur-sm">
-												<svg className="w-2 h-2 mr-1 fill-current" viewBox="0 0 8 8">
-													<circle cx="4" cy="4" r="3" />
-												</svg>
-												{project.status}
-											</span>
-										</div>
+									<div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-accent to-purple-500 opacity-50 group-hover:opacity-100 transition-opacity" />
+									<div className="flex justify-between items-start mb-4">
+										<h4 className="text-xl font-bold">{project.title}</h4>
+										<span className="text-xs px-2.5 py-1 rounded-full bg-foreground text-background font-medium">
+											{project.status}
+										</span>
 									</div>
-									<div className="p-4 sm:p-6">
-										<h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">{project.title}</h4>
-										<p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
-										<div className="flex flex-wrap gap-2 mb-4">
-											{project.tech.split(', ').map((tech: string, techIdx: number) => (
-												<span key={techIdx} className="inline-block bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded">
-													{tech}
-												</span>
-											))}
-										</div>
-										<div className="flex justify-between items-center">
-											<div className="text-sm text-gray-500 dark:text-gray-500">Expected: {project.expectedCompletion}</div>
-											<a
-												href={project.githubLink}
-												className="text-primary font-medium text-sm hover:opacity-80"
-												target="_blank"
-												rel="noopener noreferrer"
-											>
-												View Repository →
-											</a>
-										</div>
+									<p className="text-muted-foreground mb-6 line-clamp-3">
+										{project.description}
+									</p>
+									<div className="flex flex-wrap gap-2 mb-6">
+										{project.tech.split(', ').map((tech, techIdx) => (
+											<span key={techIdx} className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground border border-border/50">
+												{tech}
+											</span>
+										))}
+									</div>
+									<div className="flex justify-between items-center text-sm">
+										<span className="text-muted-foreground">Est: {project.expectedCompletion}</span>
+										<a href={project.githubLink} className="text-accent hover:underline font-medium">Repo →</a>
 									</div>
 								</motion.div>
 							))}
-						</motion.div>
-					) : (
-						<motion.div
-							variants={fadeUp}
-							initial="hidden"
-							whileInView="visible"
-							viewport={{ once: true }}
-							className="text-center py-8"
-						>
-							<div className="bg-muted rounded-lg p-6 max-w-md mx-auto border border-border">
-								<svg className="w-12 h-12 mx-auto text-gray-400 dark:text-gray-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-								</svg>
-								<p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
-									Classes are eating my side-project time right now. Check back — I&apos;m not done building.
-								</p>
-							</div>
-						</motion.div>
-					)}
-				</div>
+						</div>
+					</div>
+				)}
 			</div>
 		</section>
 	);
