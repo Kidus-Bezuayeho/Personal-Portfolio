@@ -1,8 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 
 interface Project {
 	title: string;
@@ -83,7 +82,7 @@ export default function ProjectsSection() {
 						Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">Works</span>
 					</h2>
 					<p className="text-lg text-muted-foreground max-w-2xl">
-						A collection of things I've built, ranging from local business marketing sites to hardware-integrated python scripts.
+						A collection of things I&apos;ve built, ranging from local business marketing sites to hardware-integrated python scripts.
 					</p>
 				</motion.div>
 

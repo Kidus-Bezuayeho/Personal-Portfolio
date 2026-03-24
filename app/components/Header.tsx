@@ -55,7 +55,7 @@ export default function Header() {
 		document.documentElement.classList.toggle('dark', next);
 		try {
 			localStorage.setItem('theme', next ? 'dark' : 'light');
-		} catch (e) {}
+		} catch {}
 	};
 
 	const scrollToSection = (sectionId: string) => {

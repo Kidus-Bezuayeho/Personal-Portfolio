@@ -27,7 +27,7 @@ export default function HeroSection() {
 						Turning messy problems into <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">working software.</span>
 					</h1>
 					<p className="text-lg sm:text-xl text-muted-foreground font-light max-w-xl mb-10 text-gray-600 dark:text-gray-400">
-						I'm Kidus Bezuayeho, a Full Stack Developer based in Los Angeles. I build APIs, interactive dashboards, and AI pipelines that simplify people's days.
+						I&apos;m Kidus Bezuayeho, a Full Stack Developer based in Los Angeles. I build APIs, interactive dashboards, and AI pipelines that simplify people&apos;s days.
 					</p>
 					
 					<div className="flex flex-wrap gap-4">
