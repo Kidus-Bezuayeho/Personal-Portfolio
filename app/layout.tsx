@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: ' Kidus Bezuayeho - Full Stack Developer',
+	title: 'Kidus Bezuayeho - Full Stack Developer',
 	description:
-		'Welcome to my portfolio! I am a passionate developer who believes in simplicity and effectiveness. I focus on creating straightforward solutions that solve real problems, with clean code and intuitive user experiences.',
+		"I'm Kidus — I build web apps, APIs, and AI-flavored tools. Most of my work has been internships and school projects; now I'm shipping more stuff on GitHub and learning in public.",
 	keywords: [
 		'Software Developer',
 		'Web Developer',
@@ -36,10 +36,11 @@ export const metadata: Metadata = {
 	authors: [{ name: 'Kidus Bezuayeho' }],
 	creator: 'Kidus Bezuayeho',
 	openGraph: {
-		title: 'Kidus Bezuayeho - Developer Portfolio',
-		description: 'Passionate developer creating simple and effective solutions. Explore my projects and development approach.',
+		title: 'Kidus Bezuayeho — Full stack dev',
+		description:
+			"Portfolio and projects: full-stack work, backends on Azure, and experiments with AI. Based in LA; say hi if something here resonates.",
 		url: 'https://your-domain.com',
-		siteName: 'Kidus Bezuayeho Personaal Portfolio',
+		siteName: 'Kidus Bezuayeho — Personal Portfolio',
 		images: [
 			{
 				url: '/portrait.jpg',
@@ -70,7 +71,14 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
+			<head>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}`,
+					}}
+				/>
+			</head>
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
 		</html>
 	);
