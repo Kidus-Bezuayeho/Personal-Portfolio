@@ -101,12 +101,14 @@ export default function Header() {
 			>
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex items-center justify-between h-16">
-						<div className="flex-shrink-0 -ml-4">
+						<div className="flex-shrink-0 -ml-4 min-w-0">
 							<button
+								type="button"
 								onClick={() => scrollToSection('hero')}
-								className="text-xl font-bold text-gray-900 dark:text-white hover:text-primary transition-colors"
+								className="text-left text-sm sm:text-base font-semibold text-gray-900 dark:text-white hover:text-primary transition-colors"
+								aria-label="Back to top"
 							>
-								Kidus
+								Back to the top
 							</button>
 						</div>
 
